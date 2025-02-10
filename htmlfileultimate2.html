@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load in New Tab</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            background-color: #4CAF50; /* Add a color to make it visible */
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="runCode()">Load it in New Tab</button>
+
+    <script>
+        function runCode() {
+            const newWindow = window.open('https://docs.google.com', '_blank');
+            
+            // Prepare the HTML content
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Load in New Tab</title>
+                </head>
+                <body>
+                    <input type="file" id="fileInput" accept=".html">
+                    <button id="loadButton">Load it in New Tab</button>
+                </body>
+                </html>
+            `;
+
+            // Write the HTML content to the new window's body using document.write
+            newWindow.document.open("https://docs.google.com");
+            newWindow.document.write(htmlContent);
+            newWindow.document.close();
+
+            // Add the JavaScript after the body content is written
+            const script = newWindow.document.createElement("script");
+            script.type = "text/javascript";
+            script.innerHTML = `
+                window.onload = function() {
+                    let fileContent = "";
+
+                    // File input event listener
+                    document.getElementById("fileInput").addEventListener("change", function(event) {
+                        const file = event.target.files[0];
+                        if (!file) return;
+
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            fileContent = e.target.result; // Store the file content
+                        };
+                        reader.readAsText(file); // Read the file as text
+                    });
+
+                    // Function to load HTML in a new tab
+                    document.getElementById("loadButton").addEventListener("click", function() {
+                        if (!fileContent) {
+                            alert("Please select a file first.");
+                            return;
+                        }
+
+                        const newTab = window.open();
+                        if (!newTab) {
+                            alert("Popup blocked! Allow popups and try again.");
+                            return;
+                        }
+
+                        // Write the HTML into new tab using document.write
+                        newTab.document.open("https://docs.google.com");
+                        newTab.document.write(fileContent);
+                        newTab.document.close();
+                    });
+                };
+            `;
+            newWindow.document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
