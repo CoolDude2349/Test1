@@ -16019,7 +16019,7 @@
                                 case 0:
                                     return t = localStorage.getItem("rh-speedticket"),
                                     e.next = 3,
-                                    fetch(t ? "/api/generateTicketedSessionId?code=" + t : "/api/generateSessionId");
+                                    fetch(t ? "https://typeracer.gq/api/generateTicketedSessionId?code=" + t : "https://typeracer.gq/api/generateSessionId");
                                 case 3:
                                     return e.next = 5,
                                     e.sent.json();
