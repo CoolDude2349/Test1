@@ -16037,7 +16037,7 @@
                                         break
                                     }
                                     return e.next = 15,
-                                    fetch("/api/generateSession");
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/generateSession");
                                 case 15:
                                     return e.next = 17,
                                     e.sent.json();
