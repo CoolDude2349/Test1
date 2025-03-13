@@ -403,7 +403,7 @@ window.chemical.setWisp = async function (wisp) {
 
 async function registerSW() {
   if ("serviceWorker" in navigator) {
-    await navigator.serviceWorker.register("/chemical.sw.js");
+    await navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/chemical.sw.js");
   } else {
     console.error("Service worker failed to register.");
   }
@@ -463,10 +463,10 @@ function setupFetch() {
   };
 }
 
-await loadScript("/baremux/index.js");
+await loadScript("https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/baremux/index.js");
 if (uvEnabled) {
-  await loadScript("/uv/uv.bundle.js");
-  await loadScript("/uv/uv.config.js");
+  await loadScript("https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.bundle.js");
+  await loadScript("https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.config.js");
 }
 if (scramjetEnabled) {
   await loadScript("/scramjet/scramjet.codecs.js");
@@ -477,7 +477,7 @@ if (meteorEnabled) {
   await loadScript("/meteor/meteor.config.js");
 }
 window.chemical.connection = new window.BareMux.BareMuxConnection(
-  "/baremux/worker.js"
+  "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/baremux/worker.js"
 );
 await window.chemical.setTransport(window.chemical.transport);
 setupFetch();
