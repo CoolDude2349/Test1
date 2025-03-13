@@ -476,9 +476,24 @@ if (meteorEnabled) {
   await loadScript("/meteor/meteor.codecs.js");
   await loadScript("/meteor/meteor.config.js");
 }
-window.chemical.connection = new window.BareMux.BareMuxConnection(
-  "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/baremux/index.js"
-);
+
+fetch('https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/baremux/index.js')
+            .then(response => response.text())  // Get the script content as text
+            .then(scriptContent => {
+                // Dynamically evaluate the script content to load it into the page
+                eval(scriptContent);  // Execute the script content in the page context
+
+                // Now, you can create the BareMuxConnection using the evaluated inline script
+                window.chemical.connection = new window.BareMux.BareMuxConnection(
+                    scriptContent  // Pass the inline script content instead of the URL
+                );
+
+                console.log("BareMuxConnection has been created with the inline script.");
+            })
+            .catch(error => {
+                console.error("Failed to load or evaluate the script:", error);
+            });
+  
 await window.chemical.setTransport(window.chemical.transport);
 setupFetch();
 await registerSW();
