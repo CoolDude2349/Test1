@@ -6,5 +6,5 @@ self.__uv$config = {
   client: "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.client.js",
   bundle: "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.bundle.js",
   config: "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.config.js",
-  sw: "/uv/uv.sw.js",
+  sw: "https://cdn.jsdelivr.net/gh/CoolDude2349/Test1@main/uv/uv.sw.js",
 };
