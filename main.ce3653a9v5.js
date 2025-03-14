@@ -16092,21 +16092,21 @@
                                     ), 5e3),
                                     this.cleanupStaleSessionIds(),
                                     e.next = 39,
-                                    fetch("/CHANGELOG.md");
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/CHANGELOG.md");
                                 case 39:
                                     return e.next = 41,
                                     e.sent.text();
                                 case 41:
                                     return e.t0 = e.sent,
                                     e.next = 44,
-                                    fetch("/version");
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/version");
                                 case 44:
                                     return e.next = 46,
                                     e.sent.text();
                                 case 46:
                                     return e.t1 = e.sent,
                                     e.next = 49,
-                                    fetch("/version-opensource");
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/version-opensource");
                                 case 49:
                                     return e.next = 51,
                                     e.sent.text();
@@ -16156,7 +16156,7 @@
                                     return e.abrupt("return", "invalid code");
                                 case 4:
                                     return e.next = 6,
-                                    fetch("/api/speedTicketApply?id=".concat(this.id, "&code=").concat(t));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketApply?id=".concat(this.id, "&code=").concat(t));
                                 case 6:
                                     return e.next = 8,
                                     e.sent.text();
@@ -16203,7 +16203,7 @@
                                     }
                                     return u = a.split("-")[3],
                                     e.next = 33,
-                                    fetch("/api/speedTicketApplySettings?id=".concat(this.id, "&").concat(u, "=").concat(localStorage.getItem(a)));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketApplySettings?id=".concat(this.id, "&").concat(u, "=").concat(localStorage.getItem(a)));
                                 case 33:
                                     i++,
                                     e.next = 27;
@@ -16270,7 +16270,7 @@
                                     return e.abrupt("return");
                                 case 2:
                                     return e.next = 4,
-                                    fetch("/api/speedTicketSettings?id=".concat(this.id));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketSettings?id=".concat(this.id));
                                 case 4:
                                     return e.next = 6,
                                     e.sent.text();
@@ -16402,7 +16402,7 @@
                                 case 0:
                                     return this.syncCount++,
                                     e.next = 3,
-                                    fetch("/api/sessionStatus?id=" + encodeURIComponent(this.id));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/sessionStatus?id=" + encodeURIComponent(this.id));
                                 case 3:
                                     if (e.t0 = e.sent.status,
                                     404 !== e.t0) {
@@ -16410,7 +16410,7 @@
                                         break
                                     }
                                     return e.t1 = fetch,
-                                    e.t2 = "/api/uploadSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId), "&signed="),
+                                    e.t2 = "https://corsproxy.io/?url=https://typeracer.gq/api/uploadSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId), "&signed="),
                                     e.t3 = encodeURIComponent,
                                     e.next = 10,
                                     this.getSessionSignature();
@@ -16442,7 +16442,7 @@
                                         break
                                     }
                                     return e.next = 26,
-                                    fetch("/api/getSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId)));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/getSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId)));
                                 case 26:
                                     if (200 !== (n = e.sent).status) {
                                         e.next = 35;
@@ -16484,7 +16484,7 @@
                                         break
                                     }
                                     return e.next = 5,
-                                    fetch("/api/configShuffling?id=".concat(encodeURIComponent(this.id), "&enable=true&reshuffle=true"));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/configShuffling?id=".concat(encodeURIComponent(this.id), "&enable=true&reshuffle=true"));
                                 case 5:
                                     return e.next = 7,
                                     this.syncSession(!0);
@@ -17073,7 +17073,7 @@
                                     throw new TypeError("enable argument must be a boolean");
                                 case 2:
                                     return e.next = 4,
-                                    fetch("/api/configShuffling?id=".concat(encodeURIComponent(this.id), "&enable=").concat(t));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/configShuffling?id=".concat(encodeURIComponent(this.id), "&enable=").concat(t));
                                 case 4:
                                     return e.next = 6,
                                     this.syncSession(!0);
@@ -17124,7 +17124,7 @@
                                 switch (e.prev = e.next) {
                                 case 0:
                                     return e.next = 2,
-                                    fetch("/api/configProxy?id=".concat(encodeURIComponent(this.id)) + (t ? "&httpProxy=" + encodeURIComponent(t) : ""));
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/configProxy?id=".concat(encodeURIComponent(this.id)) + (t ? "&httpProxy=" + encodeURIComponent(t) : ""));
                                 case 2:
                                     return e.next = 4,
                                     this.syncSession(!0);
@@ -17184,7 +17184,7 @@
                                     return e.abrupt("return", "session data missing");
                                 case 15:
                                     return e.next = 17,
-                                    fetch("/api/validateSession?signed=" + encodeURIComponent(i.sessionDataSignature.signature), {
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/validateSession?signed=" + encodeURIComponent(i.sessionDataSignature.signature), {
                                         method: "POST",
                                         body: i.sessionData.sessionData
                                     });
@@ -18503,7 +18503,7 @@
                                 return e.abrupt("return");
                             case 4:
                                 return e.next = 6,
-                                fetch("/api/speedTicketSettings?id=".concat(l.id));
+                                fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketSettings?id=".concat(l.id));
                             case 6:
                                 return e.next = 8,
                                 e.sent.text();
@@ -18565,7 +18565,7 @@
                             switch (e.prev = e.next) {
                             case 0:
                                 return e.next = 2,
-                                fetch("/api/speedTicketData?id=".concat(l.id));
+                                fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketData?id=".concat(l.id));
                             case 2:
                                 return e.next = 4,
                                 e.sent.text();
@@ -18595,7 +18595,7 @@
                             case 0:
                                 return g(null),
                                 e.next = 3,
-                                fetch("/api/speedTicketApplySettings?id=".concat(l.id, "&").concat(t, "=").concat(encodeURIComponent(n)));
+                                fetch("https://corsproxy.io/?url=https://typeracer.gq/api/speedTicketApplySettings?id=".concat(l.id, "&").concat(t, "=").concat(encodeURIComponent(n)));
                             case 3:
                                 return e.next = 5,
                                 e.sent.text();
@@ -25890,7 +25890,7 @@
                                             var t, r = null, i = null === (t = e.document.querySelector('link[rel="icon"]')) || void 0 === t ? void 0 : t.href;
                                             i ? r = e["%hammerhead%"].utils.url.getProxyUrl(i) : n.state.defaultFaviconFail ? r = "/static-assets/generic_globe.svg" : (r = n.state.defaultFaviconUrl,
                                             n.state.alreadyInitDefaultFaviconLoad || (n.state.alreadyInitDefaultFaviconLoad = !0,
-                                            fetch(e["%hammerhead%"].utils.url.getProxyUrl("/favicon.ico")).then(function() {
+                                            fetch(e["%hammerhead%"].utils.url.getProxyUrl("https://corsproxy.io/?url=https://typeracer.gq/favicon.ico")).then(function() {
                                                 var t = a(p().mark((function t(r) {
                                                     var i;
                                                     return p().wrap((function(t) {
@@ -25902,7 +25902,7 @@
                                                                     break
                                                                 }
                                                                 return n.state.defaultFaviconFail = !0,
-                                                                l(e.document.title, "/static-assets/generic_globe.svg"),
+                                                                l(e.document.title, "https://corsproxy.io/?url=https://typeracer.gq/static-assets/generic_globe.svg"),
                                                                 t.abrupt("return");
                                                             case 4:
                                                                 return t.next = 6,
@@ -25923,7 +25923,7 @@
                                                 }
                                             }()).catch((function() {
                                                 n.state.defaultFaviconFail = !0,
-                                                l(e.document.title, "/static-assets/generic_globe.svg")
+                                                l(e.document.title, "https://corsproxy.io/?url=https://typeracer.gq/static-assets/generic_globe.svg")
                                             }
                                             )))),
                                             l(e.document.title, r);
