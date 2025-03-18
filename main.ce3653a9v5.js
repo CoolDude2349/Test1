@@ -16392,63 +16392,83 @@
                     }
                 }()
             }, {
-    key: "syncSession",
-    value: function() {
-        var e = a(p().mark((function e(t) {
-            var n, r, i, o;
-            return p().wrap((function(e) {
-                for (; ; )
-                    switch (e.prev = e.next) {
-                    case 0:
-                        return this.syncCount++, e.next = 3, fetch("https://corsproxy.io/?url=https://typeracer.gq/api/sessionStatus?id=" + encodeURIComponent(this.id));
-                    case 3:
-                        if (e.t0 = e.sent.status, 404 !== e.t0) {
-                            e.next = 23;
-                            break;
+                key: "syncSession",
+                value: function() {
+                    var e = a(p().mark((function e(t) {
+                        var n, r, i, o;
+                        return p().wrap((function(e) {
+                            for (; ; )
+                                switch (e.prev = e.next) {
+                                case 0:
+                                    return this.syncCount++,
+                                    e.next = 3,
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/sessionStatus?id=" + encodeURIComponent(this.id));
+                                case 3:
+                                    if (e.t0 = e.sent.status,
+                                    404 !== e.t0) {
+                                        e.next = 23;
+                                        break
+                                    }
+                                    return e.t1 = fetch,
+                                    e.t2 = "https://corsproxy.io/?url=https://typeracer.gq/api/uploadSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId), "&signed="),
+                                    e.t3 = encodeURIComponent,
+                                    e.next = 10,
+                                    this.getSessionSignature();
+                                case 10:
+                                    return e.t4 = e.sent,
+                                    e.t5 = (0,
+                                    e.t3)(e.t4),
+                                    e.t6 = e.t2.concat.call(e.t2, e.t5),
+                                    e.next = 15,
+                                    this.getSessionData();
+                                case 15:
+                                    return e.t7 = e.sent,
+                                    e.t8 = {
+                                        method: "POST",
+                                        body: e.t7
+                                    },
+                                    e.next = 19,
+                                    (0,
+                                    e.t1)(e.t6, e.t8);
+                                case 19:
+                                    return e.next = 21,
+                                    this.resubmitSpeedTicketCode();
+                                case 21:
+                                    e.next = 35;
+                                    break;
+                                case 23:
+                                    if (this.syncCount % 3 !== 0 && !t) {
+                                        e.next = 35;
+                                        break
+                                    }
+                                    return e.next = 26,
+                                    fetch("https://corsproxy.io/?url=https://typeracer.gq/api/getSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId)));
+                                case 26:
+                                    if (200 !== (n = e.sent).status) {
+                                        e.next = 35;
+                                        break
+                                    }
+                                    return e.next = 30,
+                                    n.json();
+                                case 30:
+                                    return r = e.sent,
+                                    i = r.data,
+                                    o = r.signature,
+                                    e.next = 35,
+                                    this.updateSessionData(i, o);
+                                case 35:
+                                case "end":
+                                    return e.stop()
+                                }
                         }
-                        // Log the error response text for debugging
-                        return e.t1 = fetch, e.t2 = "https://corsproxy.io/?url=https://typeracer.gq/api/uploadSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId), "&signed="), e.t3 = encodeURIComponent, e.next = 10, this.getSessionSignature();
-                    case 10:
-                        return e.t4 = e.sent, e.t5 = (0, e.t3)(e.t4), e.t6 = e.t2.concat.call(e.t2, e.t5), e.next = 15, this.getSessionData();
-                    case 15:
-                        return e.t7 = e.sent, e.t8 = { method: "POST", body: e.t7 }, e.next = 19, (0, e.t1)(e.t6, e.t8);
-                    case 19:
-                        return e.next = 21, this.resubmitSpeedTicketCode();
-                    case 21:
-                        e.next = 35;
-                        break;
-                    case 23:
-                        // If the status is 404, log more details from the response
-                        if (this.syncCount % 3 !== 0 && !t) {
-                            e.next = 35;
-                            break;
-                        }
-                        return e.next = 26, fetch("https://corsproxy.io/?url=https://typeracer.gq/api/getSession?id=".concat(encodeURIComponent(this.id), "&signedId=").concat(encodeURIComponent(this.signedId)));
-                    case 26:
-                        n = e.sent;
-                        // Log the status and response text when the status is not 200
-                        if (200 !== n.status) {
-                            n.text().then((text) => {
-                                console.error("Error response body:", text); // Log the response body
-                            });
-                            e.next = 35;
-                            break;
-                        }
-                        return e.next = 30, n.json();
-                    case 30:
-                        return r = e.sent, i = r.data, o = r.signature, e.next = 35, this.updateSessionData(i, o);
-                    case 35:
-                    case "end":
-                        return e.stop()
+                        ), e, this)
                     }
-            }), e, this);
-        })));
-        return function(t) {
-            return e.apply(this, arguments);
-        };
-    }()
-},
- {
+                    )));
+                    return function(t) {
+                        return e.apply(this, arguments)
+                    }
+                }()
+            }, {
                 key: "reshuffle",
                 value: function() {
                     var e = a(p().mark((function e() {
